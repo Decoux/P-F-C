@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+      <div class="row">
+        <h1 class="col-12 text-center">Jeu p-f-c</h1>
+      </div>
+    </div>
+  </header>
+
+
+
+  <section id="section">
+    <div class="container">
+<!--Inscription joueur-->
+      <form id="form">
+        <div class="form-group mt-3">
+          <input id="pseudoPlayer" type="text" class="form-control" name="pseudo" placeholder="Pseudo">
+        </div>
+        <button onClick="savePseudo()" type="button" class="col-12 btn btn-primary">Enregistrer</button>
+      </form>
+
+      <!-- Game for player -->
+      <div id="gameUser" class="row my-4">
+        <div class="mx-auto col-6 col-md-2">
+
+          <button id="ciseaux" onclick="game(this)" class="btn rounded-circle" ><img  class="size rounded-circle border-black" src="img/ciseaux-150x150.png" alt=""></button>
+        </div>
+        <div class="mx-auto col-6 col-md-2">
+          <button id="feuille" onclick="game(this)" class="btn rounded-circle"><img class="size rounded-circle border-black" src="img/feuille-150x150.png" alt=""></button>
+        </div>
+        <div class="mx-auto col-6 col-md-2">
+          <button id="pierre" onclick="game(this)" class="btn rounded-circle"><img class="size rounded-circle border-black" src="img/pierre-150x150.png" alt=""></button>
+        </div>
+
+
+      </div>
+      <div class="col-12 text-center">
+        <strong><p id="result" class="my-2"></p></strong>
+        <strong><p id="equal" class="my-2"></p></strong>
+        <a href="javascript:window.location.reload()"><p id="restart"></p></a>
+      </div>
+
+
+      <!-- Game for Bot -->
+      <div class="row my-4 desktop">
+        <div class="mx-auto col-md-2 my-2 ">
+          <img id="ciseaux-b" class="bg-success size border-black rounded-circle" src="img/ciseaux-150x150.png" alt="">
+        </div>
+        <div class="mx-auto col-md-2 my-2">
+          <img id="feuille-b" class="bg-success size border-black rounded-circle" src="img/feuille-150x150.png" alt="">
+        </div>
+        <div class="mx-auto col-md-2 my-2">
+          <img id="pierre-b"  class="bg-success size border-black rounded-circle"src="img/pierre-150x150.png" alt="">
+        </div>
+      </div>
+      <!-- Comptage des points-->
+      <table id="table" class="table table-sm table-dark mt-4">
+
+  <tbody>
+    <tr>
+      <th id="player" scope="row">#</th>
+      <td id="resultUser"></td>
+
+
+    </tr>
+    <tr>
+      <th scope="row">Bot</th>
+      <td id="resultBot"></td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <h1 class="col-12 text-center">Realisé par Paul Decoux</h1>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+  /*Enregistrement joueur*/
+function savePseudo(){
+  var play = document.getElementById("pseudoPlayer").value;
+  document.getElementById('player').innerHTML = play;
+  document.getElementById('gameUser').style.display="flex";
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>
