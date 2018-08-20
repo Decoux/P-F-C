@@ -113,14 +113,20 @@ textarea {
 
    .border-black{
      border: 1px solid black;
+
    }
 
    .footer{
      font-size: 11px;
    }
+
+   .bg-green{
+     background-color: green;
+   }
    #gameUser{
      display: none;
    }
+
 
    @media (max-width:768px) {
      .desktop{
@@ -132,6 +138,13 @@ textarea {
      footer{
        display: none;
      }
+   }
+
+   @media (min-width:768px) {
+     .mobile{
+       display: none;
+     }
+
    }
 
 

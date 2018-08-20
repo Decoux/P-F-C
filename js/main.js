@@ -3,9 +3,10 @@ var pointUser=0;
 var pointDesktop=0;
 function game(element){
 document.getElementById("equal").innerHTML = "";
-document.getElementById("ciseaux-b").style.border = "";
-document.getElementById("feuille-b").style.border = "";
-document.getElementById("pierre-b").style.border = "";
+document.getElementById("ciseaux-b").style.backgroundColor="green";
+document.getElementById("feuille-b").style.backgroundColor="green";
+document.getElementById("pierre-b").style.backgroundColor="green";
+document.getElementById("mobileBot").innerHTML = "";
   /*tant que pointUser n'egale pas 3 n'egale pas 3 point ou pointDesktop n'egale pas 3point on continu la boucle*/
 
     /*on demande a l'utilisateur de faire son choix*/
@@ -26,13 +27,16 @@ document.getElementById("pierre-b").style.border = "";
           pointUser++;
           document.getElementById("resultUser").innerHTML = "#".repeat(pointUser);
           if (hazard==="ciseaux") {
-            document.getElementById("ciseaux-b").style.border = "5px dashed red";
+            document.getElementById("ciseaux-b").style.backgroundColor= "red";
+            document.getElementById("mobileBot").innerHTML = "Le Bot a choisis ciseaux";
           }
           else if (hazard === "feuille") {
-            document.getElementById("feuille-b").style.border = "5px dashed red";
+            document.getElementById("feuille-b").style.backgroundColor= "red";
+            document.getElementById("mobileBot").innerHTML = "Le Bot a choisis feuille";
           }
           else if (hazard === "pierre") {
-            document.getElementById("pierre-b").style.border = "5px dashed red";
+            document.getElementById("pierre-b").style.backgroundColor= "red";
+            document.getElementById("mobileBot").innerHTML = "Le Bot a choisis pierre";
 
           }
     }
@@ -42,13 +46,16 @@ document.getElementById("pierre-b").style.border = "";
       pointDesktop++;
       document.getElementById("resultBot").innerHTML = "#".repeat(pointDesktop);
       if (hazard==="ciseaux") {
-        document.getElementById("ciseaux-b").style.border = "5px dashed red";
+        document.getElementById("ciseaux-b").style.backgroundColor= "red";
+        document.getElementById("mobileBot").innerHTML = "Le Bot a choisis ciseaux";
       }
       else if (hazard === "feuille") {
-        document.getElementById("feuille-b").style.border = "5px dashed red";
+        document.getElementById("feuille-b").style.backgroundColor= "red";
+        document.getElementById("mobileBot").innerHTML = "Le Bot a choisis feuille";
       }
       else if (hazard === "pierre") {
-        document.getElementById("pierre-b").style.border = "5px dashed red";
+        document.getElementById("pierre-b").style.backgroundColor= "red";
+        document.getElementById("mobileBot").innerHTML = "Le Bot a choisis pierre";
 
       }
 
