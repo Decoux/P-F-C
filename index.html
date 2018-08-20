@@ -33,17 +33,19 @@
   <section id="section">
     <div class="container">
 <!--Inscription joueur-->
+    <div class="row">
+      <div class="col-12 col-md-3 mx-auto">
       <form id="form">
         <div class="form-group mt-3">
           <input id="pseudoPlayer" type="text" class="form-control" name="pseudo" placeholder="Pseudo">
         </div>
         <button onClick="savePseudo()" type="button" class="col-12 btn btn-primary">Enregistrer</button>
       </form>
-
+      </div>
+    </div>
       <!-- Game for player -->
       <div id="gameUser" class="row my-4">
         <div class="mx-auto col-6 col-md-2">
-
           <button id="ciseaux" onclick="game(this)" class="btn rounded-circle" ><img  class="size rounded-circle border-black" src="img/ciseaux-150x150.png" alt=""></button>
         </div>
         <div class="mx-auto col-6 col-md-2">
@@ -52,8 +54,6 @@
         <div class="mx-auto col-6 col-md-2">
           <button id="pierre" onclick="game(this)" class="btn rounded-circle"><img class="size rounded-circle border-black" src="img/pierre-150x150.png" alt=""></button>
         </div>
-
-
       </div>
       <div class="col-12 text-center">
         <strong><p id="result" class="my-2"></p></strong>
@@ -65,14 +65,17 @@
       <!-- Game for Bot -->
       <div class="row my-4 desktop">
         <div class="mx-auto col-md-2 my-2 ">
-          <img id="ciseaux-b" class="bg-success size border-black rounded-circle" src="img/ciseaux-150x150.png" alt="">
+          <img id="ciseaux-b" class="bg-green size border-black rounded-circle" src="img/ciseaux-150x150.png" alt="">
         </div>
         <div class="mx-auto col-md-2 my-2">
-          <img id="feuille-b" class="bg-success size border-black rounded-circle" src="img/feuille-150x150.png" alt="">
+          <img id="feuille-b" class="bg-green size border-black rounded-circle" src="img/feuille-150x150.png" alt="">
         </div>
         <div class="mx-auto col-md-2 my-2">
-          <img id="pierre-b"  class="bg-success size border-black rounded-circle"src="img/pierre-150x150.png" alt="">
+          <img id="pierre-b"  class="bg-green size border-black rounded-circle"src="img/pierre-150x150.png" alt="">
         </div>
+      </div>
+      <div class="mobile">
+        <p id="mobileBot" class="text-danger font-weight-bold text-center"></p>
       </div>
       <!-- Comptage des points-->
       <table id="table" class="table table-sm table-dark mt-4">
@@ -109,7 +112,7 @@ function savePseudo(){
   var play = document.getElementById("pseudoPlayer").value;
   document.getElementById('player').innerHTML = play;
   document.getElementById('gameUser').style.display="flex";
-
+  document.getElementById('form').style.display="none";
 }
 
 
